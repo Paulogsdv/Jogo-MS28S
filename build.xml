@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="lettres" name="Create Runnable Jar for projects">
+    <target name="lettres">
+        <jar destfile="lettres_0.9.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="org.evertree.lettres.Game"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="bin">
+            	<include name="**/lettres/**" />
+            	<exclude name="**/test/**" />
+        	</fileset>
+            <fileset dir="jl1.0.1.jar">
+            	<exclude name="META-INF/**/*" />
+        	</fileset>
+            <fileset dir="lettres_files">
+            	<include name="LICENSE.txt" />
+        	</fileset>
+        </jar>
+    </target>
+</project>
