@@ -18,7 +18,8 @@ public class Parameters {
     public static Long ONE_LINE_FILLED_SCORE;
     public static Long TWO_LINE_FILLED_SCORE;
     public static Long THREE_LINE_FILLED_SCORE;
-    public static Long FOUR_LINE_FILLED_SCORE;
+	public static Long FOUR_LINE_FILLED_SCORE;
+	public static Long FIVE_LINE_FILLED_SCORE;
     public static Long INITIAL_DROP_INTERVAL;
 
     static {
@@ -56,6 +57,7 @@ public class Parameters {
 	TWO_LINE_FILLED_SCORE = (Long) all.get("2.line.filled.score");
 	THREE_LINE_FILLED_SCORE = (Long) all.get("3.line.filled.score");
 	FOUR_LINE_FILLED_SCORE = (Long) all.get("4.line.filled.score");
+	FIVE_LINE_FILLED_SCORE = (Long) all.get("5.line.filled.score");
 	INITIAL_DROP_INTERVAL = (Long) all.get("initial.drop.interval");
     }
 

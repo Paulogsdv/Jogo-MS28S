@@ -49,9 +49,7 @@ public class HighScores implements Serializable {
 	}
 
 	public void add(String name, long score) throws IOException {
-		if (score <= values[LINES - 1]) {
-			return;
-		}
+
 		for (int i = 0; i < LINES; i++) {
 			if (score > values[i]) {
 				String previousName = names[i];

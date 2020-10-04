@@ -26,6 +26,7 @@ public final class LetterSource {
 	}
 
 	public static String getLetter() {
+		//return "";
 		return letters[(RANDOM.nextInt(letters.length))];
 	}
 

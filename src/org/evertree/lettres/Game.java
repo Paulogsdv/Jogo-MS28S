@@ -54,11 +54,12 @@ public class Game implements Serializable {
 	private Map<String, Action> actions;
 
 	public Game() {
+		loadActions();
 		highScores = HighScores.load();
 		userInterface = new UserInterface(this);
-		loadActions();
 		LetterSource.load(actions.keySet());
 		wordFinder = new WordFinder(actions.keySet());
+		loadActions();
 	}
 
 	public void startGame() {
@@ -165,6 +166,9 @@ public class Game implements Serializable {
 		case 4:
 			addScore(Parameters.FOUR_LINE_FILLED_SCORE);
 			break;
+		case 5:
+				addScore(Parameters.FOUR_LINE_FILLED_SCORE);
+				break;
 		default:
 			break;
 		}
@@ -347,15 +351,12 @@ public class Game implements Serializable {
 	}
 
 	private boolean addToHighScores() {
-		if (highScores.getValues()[HighScores.LINES - 1] < score) {
-			try {
-				highScores.add(userInterface.getHighScoreName(), score);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return true;
+		try {
+			highScores.add(userInterface.getHighScoreName(), score);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		return false;
+		return true;
 	}
 
 	public static void main(String[] args) {

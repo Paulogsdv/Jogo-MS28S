@@ -99,7 +99,7 @@ public class UserInterface extends JFrame {
 
 	public void paintHighScores() {
 		HighScores highScores = game.getHighScores();
-		for (int i = 0; i < HighScores.LINES; i++) {
+		for (int i = 0; i < hiScoresName.length; i++) {
 			if (highScores.getNames()[i] != null) {
 				hiScoresName[i].setText(highScores.getNames()[i]);
 				hiScoresValue[i]

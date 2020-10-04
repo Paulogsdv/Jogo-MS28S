@@ -10,8 +10,6 @@ import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-
-import com.sun.awt.AWTUtilities;
  
 public class TestOvalWindowFade extends JFrame {
  
@@ -26,8 +24,6 @@ public class TestOvalWindowFade extends JFrame {
         public void actionPerformed(ActionEvent e) {
             alpha = Math.min(alpha + .1f, 1.0f);
  
-            AWTUtilities.setWindowOpacity(
-                    TestOvalWindowFade.this, alpha);
  
             if (alpha >= 1.0f) {
                 alpha = 0f;
@@ -49,9 +45,6 @@ public class TestOvalWindowFade extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(true);
  
-        AWTUtilities.setWindowShape(this,
-                new Ellipse2D.Double(0, 0, getWidth(), getHeight()));
-        AWTUtilities.setWindowOpacity(this, 0f);
     }
  
     public void addNotify() {
