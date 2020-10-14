@@ -84,7 +84,7 @@ public class InputHandler extends KeyAdapter {
 
 	if (game.getGameStatus() == Status.PAUSED
 		|| game.getGameStatus() == Status.PLAYING) {
-	    game.pause();
+	    game.setGameStatus();
 	} else if (game.getGameStatus() == Status.WAITING
 		|| game.getGameStatus() == Status.OVER) {
 	    game.startGame();

@@ -77,12 +77,8 @@ public class Game implements Serializable {
 		gameStatus = Status.PLAYING;
 	}
 
-	public void pause() {
-		if (gameStatus == Status.PAUSED) {
-			gameStatus = Status.PLAYING;
-		} else {
-			gameStatus = Status.PAUSED;
-		}
+	public void setGameStatus() {
+		gameStatus = gameStatus == Status.PAUSED ? Status.PLAYING : Status.PAUSED;
 	}
 
 	public void exit() {
@@ -92,10 +88,10 @@ public class Game implements Serializable {
 	public void wordTyped(String word) {
 		if (word.indexOf("olecram") > -1) {
 			if (gameStatus != Status.PAUSED) {
-				pause();
+				setGameStatus();
 			}
 			new ParametersDialog(userInterface);
-			pause();
+			setGameStatus();
 		}
 	}
 
