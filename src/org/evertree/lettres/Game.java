@@ -148,26 +148,30 @@ public class Game implements Serializable {
 		userInterface.paintLabels();
 	}
 
-	void removeLines(List<Integer> lines) {
-		switch (lines.size()) {
-		case 1:
-			addScore(Parameters.ONE_LINE_FILLED_SCORE);
-			break;
-		case 2:
-			addScore(Parameters.TWO_LINE_FILLED_SCORE);
-			break;
-		case 3:
-			addScore(Parameters.THREE_LINE_FILLED_SCORE);
-			break;
-		case 4:
-			addScore(Parameters.FOUR_LINE_FILLED_SCORE);
-			break;
-		case 5:
+	void verifyLineToSetScore(Integer lineSize) {
+		switch (lineSize) {
+			case 1:
+				addScore(Parameters.ONE_LINE_FILLED_SCORE);
+				break;
+			case 2:
+				addScore(Parameters.TWO_LINE_FILLED_SCORE);
+				break;
+			case 3:
+				addScore(Parameters.THREE_LINE_FILLED_SCORE);
+				break;
+			case 4:
 				addScore(Parameters.FOUR_LINE_FILLED_SCORE);
 				break;
-		default:
-			break;
+			case 5:
+				addScore(Parameters.FIVE_LINE_FILLED_SCORE);
+				break;
+			default:
+				break;
 		}
+	}
+
+	void removeLines(List<Integer> lines) {
+		verifyLineToSetScore(lines.size());
 		addLines(lines.size());
 		userInterface.playDeleteLines(lines);
 		blocks.removeLines(lines);
