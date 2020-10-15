@@ -46,14 +46,8 @@ public final class SubsetLetterSource {
 		}
 		System.out.println("READ: " + readLetters);
 		System.out.println("SUBSET: " + subset);
-		String letter = null;
-		if (true){
-			letter = letters[subsetSize * subset + RANDOM.nextInt(subsetSize)];
-		}else{
-			letter = letters[subsetSize * subset + RANDOM.nextInt(subsetSize)];
-		}
-		System.out.println("LETTER: " + letter);
-		return letter;
+
+		return readLetters > letters.length ? letters[subsetSize * subset + RANDOM.nextInt(subsetSize)] : letters[subsetSize * subset + RANDOM.nextInt(subsetSize)];
 	}
 
 }
