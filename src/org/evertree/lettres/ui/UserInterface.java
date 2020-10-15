@@ -141,11 +141,8 @@ public class UserInterface extends JFrame {
 
 			mainCanvas.paint();
 
-			try {
-				Thread.sleep(1000 / Parameters.FPS);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			game.sleep(1000);
+
 			now = System.currentTimeMillis();
 		}
 	}
@@ -187,11 +184,7 @@ public class UserInterface extends JFrame {
 
 			mainCanvas.paint();
 
-			try {
-				Thread.sleep(1000 / Parameters.FPS);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			game.sleep(1000);
 			past = System.currentTimeMillis() - animationStart;
 		}
 
@@ -234,11 +227,7 @@ public class UserInterface extends JFrame {
 
 			mainCanvas.paint();
 
-			try {
-				Thread.sleep(1000 / Parameters.FPS);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			game.sleep(1000);
 			now = System.currentTimeMillis();
 		}
 	}
@@ -308,11 +297,8 @@ public class UserInterface extends JFrame {
 			paintBomb1(x, y, factor);
 			paintBomb2(x, y, factor);
 			paintBomb3(x, y, factor);
-			try {
-				Thread.sleep(1000 / Parameters.FPS);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
+			game.sleep(1000);
 			past = System.currentTimeMillis() - animationStart;
 		}
 	}

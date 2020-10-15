@@ -210,11 +210,8 @@ public class Game implements Serializable {
 			} else if (gameStatus == Status.PAUSED) {
 				userInterface.showMessage(MessageLine.MESSAGE_PAUSED, true);
 			}
-			try {
-				Thread.sleep(1000 / Parameters.FPS);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
+			sleep(1000);
 		}
 	}
 
@@ -362,6 +359,14 @@ public class Game implements Serializable {
 	public static void main(String[] args) {
 		Game l = new Game();
 		l.gameLoop();
+	}
+
+	public void sleep(Integer ms) {
+		try {
+			Thread.sleep(ms / Parameters.FPS);
+		} catch (Exception e) {
+			System.out.println("Falha no sleep:" + e);
+		}
 	}
 
 }
